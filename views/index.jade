@@ -1,0 +1,21 @@
+html
+  head
+    title!= 'Word count'
+    script(src="http://d3js.org/d3.v3.min.js")
+    style
+      include style.css
+
+  body
+    h1!= 'Enter a sentence to get the word count :'
+
+    div.loginbox
+      form(name="wordcount", action="/", method="post")
+        input(type="text", name="sentence")
+        input(type="submit", value="Count!")
+
+    div
+      p#data!= result
+
+    div.chart
+    script
+      include script.js
